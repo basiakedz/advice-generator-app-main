@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Advice generator app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap"
+      rel="stylesheet"
+    />
 
-  Advice #<!-- Advice ID goes here -->
+    <title>Advice generator app</title>
+  </head>
 
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <body>
+    <div class="background">
+      <div class="card">
+        <span id="advice" class="advice">ADVICE #123</span>
+        <span id="sentence" class="sentence">"Carpe diem"</span>
+        <div class="line">
+          <span class="line-horizontally"></span>
+          <div class="main-line-vertically">
+            <span class="line-vertically"></span>
+            <span class="line-vertically"></span>
+          </div>
+          <span class="line-horizontally"></span>
+        </div>
+        <button class="button" id="fetch-button">
+          <img class="dice" src="./images/icon-dice.svg" alt="Dice" />
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
