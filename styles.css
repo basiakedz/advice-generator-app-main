@@ -92,7 +92,7 @@
 }
 
 .button:disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .dice {
@@ -122,3 +122,33 @@
   }
 }
 
+@media (max-width: 375px) {
+  .background {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 70px;
+    padding-bottom: 170px;
+  }
+
+  .card {
+    padding: 20px 15px;
+  }
+
+  .sentence {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-size: 25px;
+    line-height: 1.4;
+  }
+
+  .button {
+    width: 65px;
+    height: 65px;
+    margin-bottom: -50px;
+  }
+
+  .dice {
+    width: 25px;
+    height: 25px;
+  }
+}
