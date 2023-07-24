@@ -26,18 +26,23 @@
   <body>
     <div class="background">
       <div class="card">
-        <h3 id="advice" class="advice"></h3>
-        <blockquote id="sentence" class="sentence"></blockquote>
-        <div class="line">
-          <span class="line-horizontally"></span>
-          <div class="main-line-vertically">
-            <span class="line-vertically"></span>
-            <span class="line-vertically"></span>
+        <h3 id="advice" class="card__advice"></h3>
+        <blockquote id="quotes" class="card__quote"></blockquote>
+        <div class="card__line">
+          <span class="card__line-horizontally"></span>
+          <div class="card__main-line-vertically">
+            <span class="card__line-vertically"></span>
+            <span class="card__line-vertically"></span>
           </div>
-          <span class="line-horizontally"></span>
+          <span class="card__line-horizontally"></span>
         </div>
         <button class="button" id="fetch-button" disabled="true">
-          <img class="dice" id="dice" src="./images/icon-dice.svg" alt="Dice" />
+          <img
+            class="button__dice"
+            id="dice"
+            src="./images/icon-dice.svg"
+            alt="Dice"
+          />
         </button>
       </div>
     </div>
