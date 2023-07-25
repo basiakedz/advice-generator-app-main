@@ -127,6 +127,31 @@
   }
 }
 
+.favourites {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0 10px;
+}
+
+.favourites-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: hsl(150, 100%, 66%);
+  cursor: pointer;
+  outline-color: hsl(218, 23%, 16%);
+  padding: 0;
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
 @media (max-width: 475px) {
   .background {
     padding-left: 20px;

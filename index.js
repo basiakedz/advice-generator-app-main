@@ -46,3 +46,50 @@ function fetchData() {
       fetchButton.disabled = false;
     });
 }
+
+const addToFavouriteButton = document.getElementById("add-to-favourite-button");
+
+const removeFromFavouriteButton = document.getElementById(
+  "remove-from-favourites-button"
+);
+
+addToFavouriteButton.addEventListener("click", function () {
+  addToFavourites(advice);
+  addToFavouriteButton.classList.add("hidden");
+  removeFromFavouriteButton.classList.remove("hidden");
+});
+
+removeFromFavouriteButton.addEventListener("click", function () {
+  removeFromFavourites(advice);
+  removeFromFavouriteButton.classList.add("hidden");
+  addToFavouriteButton.classList.remove("hidden");
+});
+
+function isInFavourites(advice) {
+  const favourites = getFavouritesFromLocalStorage();
+  return favourites.includes(advice);
+}
+
+function addToFavourites(advice) {
+  const favourites = getFavouritesFromLocalStorage();
+  if (!favourites.includes(advice)) {
+    favourites.push(advice);
+    updatedFavouritesInLocalStorage(favourites);
+  }
+}
+
+function removeFromFavourites(advice) {
+  const favourites = getFavouritesFromLocalStorage();
+  const updatedFavourites = favourites.filter(
+    (favourite) => favourite !== advice
+  );
+  updatedFavouritesInLocalStorage(updatedFavourites);
+}
+
+function getFavouritesFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("favourites")) || [];
+}
+
+function updatedFavouritesInLocalStorage(updatedFavourites) {
+  return localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
+}
