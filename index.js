@@ -93,3 +93,27 @@ function getFavouritesFromLocalStorage() {
 function updatedFavouritesInLocalStorage(updatedFavourites) {
   return localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
 }
+
+function openModal() {
+  const modal = document.querySelector(".modal");
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  const modal = document.querySelector(".modal");
+  modal.style.display = "none";
+}
+
+document
+  .getElementById("open-modal-button")
+  .addEventListener("click", openModal);
+document
+  .getElementById("close-modal-button")
+  .addEventListener("click", closeModal);
+
+window.addEventListener("click", (event) => {
+  const modal = document.querySelector(".modal");
+  if (event.target === modal) {
+    closeModal();
+  }
+});
