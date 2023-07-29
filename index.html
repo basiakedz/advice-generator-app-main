@@ -32,7 +32,7 @@
     <div class="background">
       <div class="card">
         <h3 id="advice" class="card__advice"></h3>
-        <blockquote id="quotes" class="card__quote"></blockquote>
+        <blockquote id="quote" class="card__quote"></blockquote>
         <div class="card__line">
           <span class="card__line-horizontally"></span>
           <div class="card__main-line-vertically">
@@ -60,7 +60,10 @@
             <i class="fa-solid fa-heart"></i>
           </button>
 
-          <button class="favourites__saved-favourites-button" id="open-modal-button">
+          <button
+            class="favourites__saved-favourites-button"
+            id="open-modal-button"
+          >
             <i class="fa-solid fa-bookmark"></i>
           </button>
           <div class="modal">
@@ -69,9 +72,9 @@
                 <i class="fa-solid fa-xmark"></i>
               </button>
               <h2 class="favourite-list__heading">Favourite quotes</h2>
+              <p class="favourite-list__quotes" id="favourite-list-quotes"></p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
