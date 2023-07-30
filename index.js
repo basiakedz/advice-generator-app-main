@@ -4,7 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("fetch-button").addEventListener("click", function () {
-  fetchData();
+  fetchData().then(() => {
+    const quote = document.querySelector("#quote").innerHTML;
+    if (isInFavourites(quote)) {
+      addToFavouriteButton.classList.add("hidden");
+      removeFromFavouriteButton.classList.remove("hidden");
+    } else {
+      removeFromFavouriteButton.classList.add("hidden");
+      addToFavouriteButton.classList.remove("hidden");
+    }
+    updatedFavouriteList();
+  });
 });
 
 function fetchData() {
@@ -15,7 +25,7 @@ function fetchData() {
   const fetchButton = document.getElementById("fetch-button");
   fetchButton.disabled = true;
 
-  fetch("https://api.adviceslip.com/advice")
+  return fetch("https://api.adviceslip.com/advice")
     .then((response) => response.json())
     .then((data) => {
       const quote = data.slip.advice;
