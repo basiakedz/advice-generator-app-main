@@ -154,9 +154,10 @@ function updatedFavouriteList() {
       const deleteButton = document.createElement("button");
       deleteButton.setAttribute("class", "favourite-list__delete-button");
       deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-      deleteButton.addEventListener("click", () =>
-        removeFromFavourites(favourite)
-      );
+      deleteButton.addEventListener("click", () => {
+        removeFromFavourites(favourite);
+        listItem.remove();
+      });
 
       listItem.appendChild(deleteButton);
       favouriteList.appendChild(listItem);
