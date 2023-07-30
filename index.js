@@ -148,7 +148,7 @@ function updatedFavouriteList() {
 
     favourites.forEach((favourite, index) => {
       const listItem = document.createElement("li");
-      listItem.setAttribute("class", "favourite-list__quotes");
+      listItem.setAttribute("class", "favourite-list__item");
       listItem.textContent = favourite;
 
       const deleteButton = document.createElement("button");

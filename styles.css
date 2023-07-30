@@ -186,14 +186,20 @@
   overflow: auto;
   padding: 20px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
 }
 
 .favourite-list {
-  flex: 1;
-  overflow-y: auto;
   margin: 0px;
   padding-right: 15px;
+}
+
+.favourite-list__item {
+  color: hsl(193, 38%, 86%);
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 .modal__close-button {
@@ -231,9 +237,8 @@
 }
 
 .favourite-list__quotes {
-  color: hsl(193, 38%, 86%);
-  margin-bottom: 10px;
-  line-height: 1.5;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .favourite-list__delete-button {
