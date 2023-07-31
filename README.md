@@ -1,4 +1,4 @@
-# Advice generator app ![Green Light Bulb](/images/favicon-32x32.png)
+# Advice Generator App ![Green Light Bulb](/images/favicon-32x32.png)
 
 This is one of two “advice generator apps”. Both look the same but this app was created in plain JS and the second one in React (you can find the link here [https://github.com/basiakedz/advice-generator-app_React](https://github.com/basiakedz/advice-generator-app_React) to compare them). Making two similar apps but in different ways allowed me to see the difference between using plain JS and React (which is easier to implement in my opinion).
 
