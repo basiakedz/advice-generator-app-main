@@ -133,38 +133,55 @@ window.addEventListener("click", (event) => {
   }
 });
 
+const favouriteListEmpty = document.getElementById("favourite-list-empty");
+
 function updatedFavouriteList() {
   const favourites = getFavouritesFromLocalStorage();
   const favouriteListQuotes = document.getElementById("favourite-list-quotes");
 
-  if (favourites.length === 0) {
-    favouriteListQuotes.innerHTML = `<p class="favourite-list__empty">
-  No favourites added. Add quotes to favourite list so you can come
-  back to them anytime you want <i class="fa-solid fa-heart"></i>
-</p>`;
-  } else {
-    const favouriteList = document.createElement("ul");
-    favouriteList.setAttribute("class", "favourite-list");
+  const favouriteList = document.createElement("ul");
+  favouriteList.setAttribute("class", "favourite-list");
 
-    favourites.forEach((favourite, index) => {
-      const listItem = document.createElement("li");
-      listItem.setAttribute("class", "favourite-list__item");
-      listItem.textContent = favourite;
-
-      const deleteButton = document.createElement("button");
-      deleteButton.setAttribute("class", "favourite-list__delete-button");
-      deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-      deleteButton.addEventListener("click", () => {
-        removeFromFavourites(favourite);
-        listItem.remove();
-      });
-
-      listItem.appendChild(deleteButton);
-      favouriteList.appendChild(listItem);
-    });
-    favouriteListQuotes.innerHTML = "";
-    favouriteListQuotes.appendChild(favouriteList);
+  if (favourites.length !== 0) {
+    favouriteListEmpty.classList.add("hidden");
   }
+
+  favourites.forEach((favourite, index) => {
+    const listItem = document.createElement("li");
+    listItem.setAttribute("class", "favourite-list__item");
+    listItem.textContent = favourite;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.setAttribute("class", "favourite-list__delete-button");
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    deleteButton.addEventListener("click", () => {
+      removeFromFavourites(favourite);
+      listItem.remove();
+      addEmptyState();
+      updateFavouriteButtonState(favourite);
+    });
+
+    listItem.appendChild(deleteButton);
+    favouriteList.appendChild(listItem);
+  });
+  favouriteListQuotes.innerHTML = "";
+  favouriteListQuotes.appendChild(favouriteList);
 }
 
 updatedFavouriteList();
+
+function addEmptyState() {
+  const favourites = getFavouritesFromLocalStorage();
+  if (favourites.length === 0) {
+    favouriteListEmpty.classList.remove("hidden");
+  }
+}
+addEmptyState();
+
+function updateFavouriteButtonState(deleted) {
+  const quoteElement = document.querySelector("#quote").innerHTML;
+  if (quoteElement === deleted) {
+    removeFromFavouriteButton.classList.add("hidden");
+    addToFavouriteButton.classList.remove("hidden");
+  }
+}
