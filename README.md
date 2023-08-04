@@ -5,7 +5,6 @@ This is one of two “advice generator apps”. Both look the same but this app 
 This app is using the [Advice Slip API](https://api.adviceslip.com).
 Users can generate a new piece of advice by clicking on the dice icon and save the best quotes in favourite list, so that they can come back to them anytime they want.
 
-
 ### Link
 
 - Live preview: [https://advice-generator-basiakedz.netlify.app](https://advice-generator-basiakedz.netlify.app)
@@ -15,3 +14,5 @@ Users can generate a new piece of advice by clicking on the dice icon and save t
 - Semantic HTML5 markup
 - CSS
 - JavaScript
+
+![App Screenshot](./images/app-screenshot.png)
